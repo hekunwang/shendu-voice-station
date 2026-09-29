@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#18332f">
+  <meta name="referrer" content="same-origin">
+  <title>神都声馆 · 让故事再次有声</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="神都声馆首页"><span class="brand-mark" aria-hidden="true">声</span><span class="brand-name">神都声馆<small>SHENDU VOICE</small></span></a>
+    <div class="sidebar-content">
+      <p class="sidebar-label">我的声馆</p>
+      <nav class="sidebar-nav" aria-label="声馆导航">
+        <a id="admin-link" class="nav-item" href="/admin" hidden><span>管理后台</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
+        <a class="nav-item active" href="#composer-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4m4-8v12m4-15v18m4-15v12m4-8v4"/></svg><span>声音创作</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
+        <a class="nav-item" href="#requests-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h4"/></svg><span>我的请求</span></a>
+      </nav>
+      <div class="sidebar-poem"><span class="poem-seal" aria-hidden="true">回响</span><p>山海有灵<br>万象有声</p><span class="poem-rule"></span><small>把故事，交给熟悉的声音。</small></div>
+      <div class="sidebar-bottom"><span class="private-dot"></span> 私人声线工作室<small>SHENDU · VOICE ATELIER</small></div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <div class="topbar"><span class="breadcrumb">神都夜行录 <span>/</span> 声音创作</span><div class="header-actions" id="account-actions" hidden><span class="account-avatar" aria-hidden="true">客</span><span class="account-name" id="account-name"></span><button class="text-button" id="logout-button" type="button">退出</button></div><span class="private-label" id="private-label">登录或注册</span></div>
+    <main id="main-content">
+      <section class="login-view" id="login-view" aria-labelledby="login-heading">
+        <div class="login-intro"><p class="eyebrow">SHENDU VOICE ATELIER</p><h1 id="login-heading">故事未完，<br>故人有声。</h1><p>在神都的万千回响里，<br>找到你熟悉的那一道声音。</p><div class="login-orbit" aria-hidden="true"><span>声</span></div><span class="intro-note">选择角色 · 写下台词 · 聆听新的故事</span></div>
+        <form class="login-card" id="login-form">
+          <span class="card-kicker">WELCOME BACK</span><h2 id="auth-heading">欢迎回到声馆</h2><p class="muted" id="auth-description">用你的账户，开启今天的创作。</p>
+          <label for="username">用户名</label><input id="username" name="username" autocomplete="username" required maxlength="80" placeholder="输入你的用户名">
+          <label for="password">密码</label><input id="password" name="password" type="password" autocomplete="current-password" required placeholder="输入密码">
+          <p id="register-help" class="muted" hidden>用户名 3～40 位，可用英文字母、数字、下划线、句点和短横线；密码 8～128 位。</p><p class="form-error" id="login-error" role="alert" hidden></p>
+          <button class="primary-button" id="login-button" type="submit">进入声馆 <span aria-hidden="true">↗</span></button>
+          <button id="auth-toggle" class="text-button" type="button">还没有账号？立即注册</button><p class="login-footnote"><span aria-hidden="true">◇</span> 你的台词与作品，仅自己可见</p>
+        </form>
+      </section>
+
+      <section id="station-view" hidden aria-labelledby="station-heading">
+        <div class="page-heading">
+          <div class="hero-copy"><p class="eyebrow">熟悉的声音，新的故事</p><h1 id="station-heading">让故事，<em>再次有声。</em></h1><p>一句问候，一段对白。让神都的声音，为你娓娓道来。</p><div class="hero-labels"><span>游戏原声采样</span><span>私人创作空间</span></div></div>
+          <svg class="hero-art" viewBox="0 0 500 230" fill="none" aria-hidden="true"><circle cx="303" cy="114" r="85"/><circle cx="303" cy="114" r="103" class="orbit"/><path class="mountain-back" d="M5 224 88 174 112 187 179 121 229 166 276 129 343 181 397 123 491 214V230H5Z"/><path class="mountain-front" d="m50 230 111-55 36 22 61-39 44 32 42-13 61 37 39-26 56 42Z"/><path class="mountain-line" d="m88 174 24 13 67-66 50 45 47-37 67 52 54-58"/><path class="sound-lines" d="M249 100v30m12-44v58m12-72v88m12-67v45m12-89v134m12-114v94m12-76v55m12-75v96m12-65v34m12-26v18"/><path class="cloud-line" d="M46 83h84m-47-9h90M374 63h76m-48 9h83M360 155h60"/><circle cx="183" cy="44" r="2" class="star"/><circle cx="438" cy="108" r="2" class="star"/></svg>
+          <span class="hero-edition" aria-hidden="true">THE SOUND OF SHENDU</span>
+        </div>
+        <div class="workspace-toolbar"><div class="workspace-caption"><span class="caption-dot"></span>你的声音工作台</div><div class="service-state" aria-live="polite"><span class="state-dot" id="service-dot"></span><strong id="service-title">正在连接</strong><small id="service-detail">正在读取生成状态</small></div></div>
+        <div class="notice" id="service-notice" role="status" hidden></div>
+        <div class="workspace">
+          <section class="composer panel" aria-labelledby="composer-heading">
+            <div class="panel-heading"><div><span class="card-kicker">CREATE A VOICE</span><h2 id="composer-heading">开始创作</h2></div><span class="model-tag"><span></span> VoxCPM2</span></div>
+            <form id="generation-form">
+              <div class="field-heading"><label for="voice-search"><span class="step-number">01</span> 选择声线</label><span class="muted" id="voice-count"></span></div>
+              <div class="voice-picker"><div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="voice-search" type="search" autocomplete="off" placeholder="寻找一位熟悉的角色…" aria-label="搜索角色声线" aria-controls="voice-list"><span class="search-hint">声线库</span></div><div class="voice-list" id="voice-list" role="group" aria-label="可选角色"></div><p class="empty-voices muted" id="empty-voices" hidden>没有找到这个角色，试试其他名字。</p><button class="catalog-toggle" type="button" id="catalog-toggle" aria-expanded="false" aria-controls="voice-list">查看全部角色</button></div>
+              <div class="selected-voice" id="selected-voice" hidden><div class="reference-heading"><div class="reference-identity"><span id="selected-voice-avatar"></span><div><span class="selected-caption">原声试听</span><strong id="selected-voice-name"></strong></div></div><span class="reference-duration" id="reference-seconds"></span></div><p id="selected-voice-description"></p><audio id="reference-player" controls preload="none" aria-label="所选角色的原声样本"></audio></div>
+              <div class="field-heading text-field-heading"><label for="speech-text"><span class="step-number">02</span> 写下台词</label><span class="field-optional">让标点留住呼吸与停顿</span></div>
+              <div class="script-editor"><textarea id="speech-text" name="text" rows="5" placeholder="如果能再见一面，你想让她说些什么？&#10;&#10;在这里写下你的台词……" aria-describedby="text-help character-count" required></textarea><div class="editor-bottom"><span id="text-help">每一次落笔，都有回响。</span><span class="character-count" id="character-count">0 / 300</span></div></div>
+              <p class="form-error" id="generation-error" role="alert" hidden></p>
+              <div class="generate-row"><div class="generation-note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>按提交顺序生成<br><small>排队进度随时可见</small></span></div><button class="primary-button generate-button" id="generate-button" type="submit" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4m4-7v10m4-13v16m4-13v10m4-7v4"/></svg><span id="generate-button-label">生成语音</span><span aria-hidden="true">↗</span></button></div>
+            </form>
+          </section>
+
+          <section class="requests panel" aria-labelledby="requests-heading">
+            <div class="panel-heading"><div><span class="card-kicker">YOUR COLLECTION</span><h2 id="requests-heading">我的请求</h2></div><span class="subtle-tag" id="request-count">0 条</span></div>
+            <div class="queue-summary"><span class="queue-summary-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h10M5 18h6"/><path d="m17 15 3 3-3 3"/></svg></span><div><strong id="queue-summary-title">正在读取队列</strong><p>按顺序，为每一段故事发声</p></div></div>
+            <div class="request-tabs" role="group" aria-label="筛选我的请求"><button type="button" class="active" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="active" aria-pressed="false">进行中</button><button type="button" data-filter="completed" aria-pressed="false">已完成</button><button type="button" data-filter="failed" aria-pressed="false">失败</button><button type="button" data-filter="cancelled" aria-pressed="false">已取消</button><button type="button" data-filter="deleted" aria-pressed="false">回收站</button></div><label class="history-selector">搜索历史角色<input id="history-voice" type="search" maxlength="80" placeholder="输入角色名，支持部分名称" autocomplete="off"></label>
+            <div class="jobs-list" id="jobs-list"></div><button id="more-history" type="button" class="job-action" hidden>加载更早的 20 条记录</button>
+            <div class="empty-jobs" id="empty-jobs"><div class="empty-illustration" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="37"/><circle cx="50" cy="50" r="25"/><path d="M34 44v12m8-22v32m8-40v48m8-36v24m8-18v12"/></svg></div><h3 id="empty-jobs-title">第一段声音，从这里开始</h3><p id="empty-jobs-description">选一个角色，写下你想听的台词。<br>提交后，可以在这里查看排队位置。</p></div>
+            <div class="collection-note"><span aria-hidden="true">◇</span><p>只有你可以看见这里的台词与作品。<br>排位自动更新，等待中的请求可以随时取消。</p></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>一字一句，皆有回响。</span><a href="https://github.com/hekunwang/shendu-voice-station" target="_blank" rel="noopener noreferrer">GitHub · 项目源码 ↗</a><span>AI 合成语音 <span class="footer-dot">·</span> 私人使用</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="delete-dialog"><form method="dialog"><span class="card-kicker">MANAGE YOUR REQUEST</span><h2>删除这条请求？</h2><p id="delete-dialog-description">这条请求和生成结果会从你的记录中移除。</p><div class="dialog-actions"><button class="secondary-button" value="cancel">保留请求</button><button class="danger-button" id="confirm-delete-button" value="confirm">删除请求</button></div></form></dialog>
+</body>
+</html>

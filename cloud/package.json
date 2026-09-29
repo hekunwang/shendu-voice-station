@@ -1,0 +1,11 @@
+{
+  "name": "shendu-voice-station-cloud",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test_worker.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.114.0"
+  }
+}

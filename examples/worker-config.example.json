@@ -1,0 +1,14 @@
+{
+  "cloud_url": "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev",
+  "worker_token": "REPLACE_WITH_RANDOM_SECRET",
+  "worker_id": "my-generation-device",
+  "output_root": "/absolute/path/to/private/outputs",
+  "runtime_paths": [],
+  "adapter_path": "/absolute/path/to/shendu-voice-station/voxcpm_low_memory_adapter.py",
+  "model_dir": "/absolute/path/to/VoxCPM2",
+  "repo_dir": "/absolute/path/to/VoxCPM",
+  "resident_cpu_weights": true,
+  "poll_seconds": 10,
+  "model_load_timeout_seconds": 300,
+  "sentence_timeout_seconds": 600
+}

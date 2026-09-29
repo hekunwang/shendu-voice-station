@@ -1,0 +1,31 @@
+// Replace the placeholder database ID before deployment.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "shendu-voice-station",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-29",
+  "workers_dev": true,
+  "assets": {
+    "directory": "../ui",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "shendu-voice-station",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "0 19 * * *"
+    ]
+  },
+  "vars": {
+    "WORKER_OFFLINE_SECONDS": "90",
+    "LEASE_SECONDS": "300",
+    "AUDIO_STORAGE": "d1",
+    "AUDIO_QUOTA_BYTES": "419430400"
+  }
+}
