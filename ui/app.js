@@ -370,6 +370,10 @@
     $("empty-jobs").hidden = visible !== 0;
     $("empty-jobs-title").textContent = state.filter === "all" ? "第一段声音，从这里开始" : state.filter === "active" ? "目前没有等待中的请求" : state.filter === "deleted" ? "回收站为空" : "没有符合筛选条件的记录";
     $("empty-jobs-description").textContent = state.filter === "all" ? "选一个角色，写下你想听的台词。\n提交后，可以在这里查看排队位置。" : state.filter === "active" ? "提交新的台词后，可以在这里查看进度。" : state.filter === "deleted" ? "删除的作品会在这里保留 7 天。" : "可以切换状态或角色，查看其他记录。";
+    if ($("history-voice").value.trim() && state.filter !== "active") {
+      $("empty-jobs-title").textContent = "没有匹配的历史记录";
+      $("empty-jobs-description").textContent = "试试角色名字的一部分，或清空搜索查看全部记录。";
+    }
   }
 
   async function refreshJobs() {
